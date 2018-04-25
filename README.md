@@ -82,7 +82,7 @@ With bahdanau attention, we achieved **0.72434** for BLEU Score. The block shown
 Epoch 99, step 95/96, (Training Loss: 2.0834, samp_prob: 0.1235) [4:07:06<00:00, 148.26s/it]
 ```
 
-![](util/bleu.png)
+![](util/bleu-plot.png)
 
 
 
