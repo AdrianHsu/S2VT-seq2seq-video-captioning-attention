@@ -86,6 +86,8 @@ Epoch 99, step 95/96, (Training Loss: 2.0834, samp_prob: 0.1235) [4:07:06<00:00,
 
 
 
+![](util/bleu-cmd.png)
+
 ## How-to play
 
 1. Download the saver `.ckpt` file, and put it into `saver_best/`
@@ -125,7 +127,7 @@ probs =
 
 ## Correct descriptions
 
-| `TZ860P4iTaM_15_28.avi`,a cat is playing the piano           | ****`qvg9eM4Hmzk_4_10.avi`,a man is lifting a truck       |
+| `TZ860P4iTaM_15_28.avi`,a cat is playing the piano           | `qvg9eM4Hmzk_4_10.avi`,a man is lifting a truck           |
 | ------------------------------------------------------------ | --------------------------------------------------------- |
 | ![](raw_videos/TZ860P4iTaM_15_28.gif)                        | ![raw](raw_videos/qvg9eM4Hmzk_4_10.gif)                   |
 | **`UXs3eq68ZjE_250_255.avi`,someone is is adding rice a pot** | **`0lh_UWF9ZP4_62_69.avi`,a woman is mixing ingredients** |
@@ -143,7 +145,11 @@ probs =
 
 ## saver (Currently Unavailable)
 
-The model `save_net.ckpt-9407.data-00000-of-00001` is quite large, you are suggested to download the `.ckpt` separately. You can download this model from [here](#). Also, you can directly reproduce this result by running `./run.sh`
+The model `save_net.ckpt-9407.data-00000-of-00001` is quite large (186MB), you are suggested to download the `.ckpt` separately. You can download this model from [here](#). 
+
+
+
+However, you can just directly reproduce this result by running `./run.sh`
 
 
 
