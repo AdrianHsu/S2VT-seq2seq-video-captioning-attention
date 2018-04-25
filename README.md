@@ -6,7 +6,7 @@ Based on the open source project written by *cehnxinpeng*. You can access the or
 
 
 
-To access the original paper, **[1] S. Venugopalan, M. Rohrbach, R. Mooney, T. Darrell, and K. Saenko. Sequence to sequence video to text. In Proc. ICCV, 2015**, please click the link : [http://www.cs.utexas.edu/users/ml/papers/venugopalan.iccv15.pdf]()
+To access the original paper, **[1] S. Venugopalan, M. Rohrbach, R. Mooney, T. Darrell, and K. Saenko. Sequence to sequence video to text. In Proc. ICCV, 2015**, please click the link : [http://www.cs.utexas.edu/users/ml/papers/venugopalan.iccv15.pdf](http://www.cs.utexas.edu/users/ml/papers/venugopalan.iccv15.pdf)
 
 
 
@@ -94,13 +94,6 @@ Epoch 99, step 95/96, (Training Loss: 2.0834, samp_prob: 0.1235) [4:07:06<00:00,
 4. run `demo.sh`
 
 
-
-## saver
-
-The model `save_net.ckpt-9407.data-00000-of-00001` is quite large, you are suggested to download the .ckpt separately. You can download this model from [here](#).
-
-
-
 ## Schedule Sampling
 
 I used `inverse-sigmoid` for my schedule sampling.
@@ -148,6 +141,10 @@ probs =
 | **`ufFT2BWh3BQ_0_8.avi`,a panda panda is**       | **`WTf5EgVY5uU_124_128.avi`,a woman is oil onions and** |
 | ![raw](raw_videos/ufFT2BWh3BQ_0_8.gif)           | ![raw](raw_videos/WTf5EgVY5uU_124_128.gif)              |
 
+## saver (Currently Unavailable)
+
+The model `save_net.ckpt-9407.data-00000-of-00001` is quite large, you are suggested to download the `.ckpt` separately. You can download this model from [here](#). Also, you can directly reproduce this result by running `./run.sh`
+
 
 
 ## Dataset Tree (Currently Unavailable)
@@ -176,11 +173,11 @@ probs =
 
 #### 1. Bidirectional RNN
 
-https://github.com/AdrianHsu/MLDS2018SPRING/tree/241b127329e4dae85caaa0d294d81a1a1795cb5f
+[https://github.com/AdrianHsu/MLDS2018SPRING/tree/241b127329e4dae85caaa0d294d81a1a1795cb5f](https://github.com/AdrianHsu/MLDS2018SPRING/tree/241b127329e4dae85caaa0d294d81a1a1795cb5f)
 
 #### 2. `raw_rnn()` combined with two `dynamic_rnn()`
 
-https://github.com/AdrianHsu/MLDS2018SPRING/tree/66bde2627a0f36360dcffa5d76583ce49514ae8a
+[https://github.com/AdrianHsu/MLDS2018SPRING/tree/66bde2627a0f36360dcffa5d76583ce49514ae8a](https://github.com/AdrianHsu/MLDS2018SPRING/tree/66bde2627a0f36360dcffa5d76583ce49514ae8a)
 
 
 
@@ -188,17 +185,17 @@ https://github.com/AdrianHsu/MLDS2018SPRING/tree/66bde2627a0f36360dcffa5d76583ce
 
 **[1] S. Venugopalan, M. Rohrbach, R. Mooney, T. Darrell, and K. Saenko. Sequence to sequence video to text. In Proc. ICCV, 2015**
 
-http://www.cs.utexas.edu/users/ml/papers/venugopalan.iccv15.pdf
+[http://www.cs.utexas.edu/users/ml/papers/venugopalan.iccv15.pdf](http://www.cs.utexas.edu/users/ml/papers/venugopalan.iccv15.pdf)
 
 **[2] Bengio, S., Vinyals, O., Jaitly, N., and Shazeer, N. Scheduled sampling for sequence prediction with**
 **recurrent neural networks. In NIPS, 2015.**
 
-https://arxiv.org/abs/1506.03099
+[https://arxiv.org/abs/1506.03099](https://arxiv.org/abs/1506.03099)
 
 **[3] Thang Luong, Hieu Pham, and Christopher D. Manning. Effective Approaches to Attention based Neural Machine Translation. In EMNLP, 2015.**
 
-https://arxiv.org/abs/1508.04025
+[https://arxiv.org/abs/1508.04025](https://arxiv.org/abs/1508.04025)
 
 **[4] Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. Neural Machine Translation by Jointly Learning To Align and Translate. In ICLR, 2015.**
 
-https://arxiv.org/abs/1409.0473
+[https://arxiv.org/abs/1409.0473](https://arxiv.org/abs/1409.0473)
