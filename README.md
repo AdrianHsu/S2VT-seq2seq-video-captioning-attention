@@ -2,7 +2,7 @@
 
 >  S2VT (seq2seq) video captioning with bahdanau & luong attention implementation in Tensorflow
 
-Based on the open source project written by *cehnxinpeng*. You can access the original version here: [https://github.com/chenxinpeng/S2VT](https://github.com/chenxinpeng/S2VT) . 
+Based on the open source project written by *cehnxinpeng*. You can access the original version here: [https://github.com/chenxinpeng/S2VT](https://github.com/chenxinpeng/S2VT) .
 
 
 
@@ -16,7 +16,7 @@ Based on the original paper, we take video frames as input in the encoding stage
 
 ![](util/s2vt-1.png)
 
-The model structure of our code are shown below. In brief, we exclusively add the DropoutWrapper, Bahdanau Attention ( or Luong Attention ), Schedule Sampling and frame/word embedding in our implementation.
+The model structure of our code are shown below. In brief, no only did we implement the original paper, but also we add some extra features like **Bahdanau Attention ( & Luong Attention ), Schedule Sampling and frame/word embedding** in our implementation.
 
 ![](util/s2vt-2.png)
 
@@ -94,6 +94,15 @@ Epoch 99, step 95/96, (Training Loss: 2.0834, samp_prob: 0.1235) [4:07:06<00:00,
 2. Install all required python3 packages through pip3
 3. Set up the data path in `demo.sh`
 4. run `demo.sh`
+
+
+
+
+## To-do
+
+* "beam search" implementation
+* comparison of the Luong and Bahdanau Attention
+
 
 
 ## Schedule Sampling
