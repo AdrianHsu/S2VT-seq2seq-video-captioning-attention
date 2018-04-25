@@ -1,14 +1,97 @@
 # S2VT 
 
-Video Captioning (seq2seq)
+>  S2VT (seq2seq) video captioning with bahdanau & luong attention implementation in Tensorflow
+
+Based on the open source project written by *cehnxinpeng*. You can access the original version here: [https://github.com/chenxinpeng/S2VT](https://github.com/chenxinpeng/S2VT) . 
+
+
+
+To access the original paper, **[1] S. Venugopalan, M. Rohrbach, R. Mooney, T. Darrell, and K. Saenko. Sequence to sequence video to text. In Proc. ICCV, 2015**, please click the link : [http://www.cs.utexas.edu/users/ml/papers/venugopalan.iccv15.pdf]()
+
+
+
+## Model Structure
+
+Based on the original paper, we take video frames as input in the encoding stage, and after that, in decoding stage, we feed the decoder output ( A, man, is, …) to concat with the red-color LSTM output.
+
+![](util/s2vt-1.png)
+
+The model structure of our code are shown below. In brief, we exclusively add the DropoutWrapper, Bahdanau Attention ( or Luong Attention ), Schedule Sampling and frame/word embedding in our implementation.
+
+![](util/s2vt-2.png)
+
+
+
+## Experiment Setup
+
+Global Parameters: 
+
+```python
+n_inputs        = 4096
+n_hidden        = 600
+val_batch_size  = 100 # validation batch size
+n_frames        = 80 # .npy (80, 4096) 
+max_caption_len = 50
+forget_bias_red = 1.0
+forget_bias_gre = 1.0
+dropout_prob    = 0.5
+```
+
+Changeable Parameters: (argparse)
+
+```python
+learning_rate   = 1e-4
+num_epochs      = 100
+batch_size      = 250
+load_saver      = False # you can use pretrained model if you want
+with_attention  = True
+data_dir        = '.'
+test_dir   = './testing_data'
+```
+
+
+
+## Version
+
+* Python 3.6.0
+* Tensorflow 1.6.0
+
+
+
+## Required Packages
+
+You need to pip3 install these packages below to run this code.
+
+```python
+import tensorflow as tf # keras.preprocessing included
+import numpy as np
+import pandas as pd
+import argparse
+import pickle
+from colors import *
+from tqdm import *
+```
 
 
 
 ## Best BLEU Score
 
-BLEU:`0.72434`
+With bahdanau attention, we achieved **0.72434** for BLEU Score. The block shown below indicates the end of training status and`BLEU_eval.py` output message. You can check the sample output in `output.txt`.
 
+```
 Epoch 99, step 95/96, (Training Loss: 2.0834, samp_prob: 0.1235) [4:07:06<00:00, 148.26s/it]
+```
+
+![](util/bleu.png)
+
+
+
+## How-to play
+
+1. Download the saver `.ckpt` file, and put it into `saver_best/`
+2. Install all required python3 packages through pip3
+3. Set up the data path in `demo.sh`
+4. run `demo.sh`
 
 
 
@@ -19,6 +102,8 @@ The model `save_net.ckpt-9407.data-00000-of-00001` is quite large, you are sugge
 
 
 ## Schedule Sampling
+
+I used `inverse-sigmoid` for my schedule sampling.
 
 ```
 probs = 
@@ -65,21 +150,29 @@ probs =
 
 
 
+## Dataset Tree (Currently Unavailable)
+
+```shell
+.
+├── bleu_eval.py
+├── sample_output_testset.txt
+├── testing_data/
+│   ├── feat/ # 100 files, .npy
+│   ├── video/ #.avi
+│	└── id.txt
+├── testing_label.json
+├── training_data/
+│   ├── feat/ # 1450 files, .npy
+│   ├── video/ # .avi 
+│	└── id.txt
+└── training_label.json
+
+6 directories, 6 files
+```
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-## Other branches: (currently unavailable)
+## Other branches: (Currently Unavailable)
 
 #### 1. Bidirectional RNN
 
